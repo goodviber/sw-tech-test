@@ -5,4 +5,8 @@ class Row
     @seats = Array.new(length, Seat.new)
   end
 
+  def size
+    @seats.size
+  end
+
 end

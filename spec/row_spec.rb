@@ -5,8 +5,13 @@ RSpec.describe Seat do
 
   describe "initialize" do
     it "creates a row of 50 seats" do
-      byebug
       expect(subject.seats.size).to eq(50)
+    end
+  end
+
+  describe "#size" do
+    it "returns the number of seats in the row" do
+      expect(subject.size).to eq(50)
     end
   end
 end
