@@ -1,12 +1,9 @@
 class Row
-  attr_reader :seats
+  attr_reader :seats, :number_of_seats
 
-  def initialize(length = 50)
-    @seats = Array.new(length, Seat.new)
-  end
-
-  def size
-    @seats.size
+  def initialize(number_of_seats = 50)
+    @number_of_seats = number_of_seats
+    @seats = Array.new(number_of_seats, Seat.new)
   end
 
 end

@@ -6,6 +6,6 @@ end
 
 class InvalidSeatNumberError < StandardError
   def message
-    "A row must be within the correct range"
+    "A seat must be within the correct range"
   end
 end

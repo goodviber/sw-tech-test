@@ -4,7 +4,7 @@ RSpec.describe Theatre do
   subject { Theatre.new }
 
   describe "intialize" do
-    it "creates a theatre with 100 rows" do
+    it "initializes a theatre with 100 rows" do
       expect(subject.rows.size).to eq(100)
     end
   end

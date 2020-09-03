@@ -1,17 +1,11 @@
 require 'spec_helper'
 
-RSpec.describe Seat do
-  subject { Row.new }
+RSpec.describe Row do
+  subject { Row.new(50) }
 
   describe "initialize" do
-    it "creates a row of 50 seats" do
-      expect(subject.seats.size).to eq(50)
-    end
-  end
-
-  describe "#size" do
-    it "returns the number of seats in the row" do
-      expect(subject.size).to eq(50)
+    it "initializes a row of 50 seats" do
+      expect(subject.number_of_seats).to eq(50)
     end
   end
 end
