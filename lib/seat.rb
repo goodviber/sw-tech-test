@@ -9,5 +9,11 @@ class Seat
 
   def reserve
     @available = false
+    self
+  end
+
+  def cancel
+    @available = true
+    self
   end
 end

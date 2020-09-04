@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Theatre
   def initialize(rows = 100)
-    @all_seats = Array.new(rows){ Row.new }
+    @all_seats = Array.new(rows) { Row.new }
   end
 
   def row(row)
@@ -21,10 +23,10 @@ class Theatre
   private
 
   def assert_valid_row_number(row)
-    raise InvalidRowNumberError if row < 0 || row > rows.count
+    raise InvalidRowNumberError if row.negative? || row > rows.count
   end
 
   def assert_valid_seat_number(seat)
-    raise InvalidSeatNumberError if seat < 0 || seat > 50
+    raise InvalidSeatNumberError if seat.negative? || seat > 50
   end
 end
