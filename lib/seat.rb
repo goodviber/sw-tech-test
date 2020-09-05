@@ -3,7 +3,7 @@ class Seat
     @available = true
   end
 
-  def availability?
+  def available?
     @available
   end
 
@@ -12,8 +12,4 @@ class Seat
     self
   end
 
-  def cancel
-    @available = true
-    self
-  end
 end

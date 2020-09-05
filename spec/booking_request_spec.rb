@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe BookingRequest do
-  subject { BookingRequest.new(0,47,39,47,41) }
+  subject { BookingRequest.new({id: 0, start_row: 47, first_seat: 39, end_row: 47, last_seat: 41}) }
 
-  describe "#initialize" do
-    it "initializes a BookingRequest" do
+  describe '#initialize' do
+    it 'initializes a BookingRequest' do
       expect(subject).to be_an_instance_of(BookingRequest)
       expect(subject.id).to be(0)
       expect(subject.start_row).to be(47)

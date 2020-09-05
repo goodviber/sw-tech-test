@@ -20,6 +20,10 @@ class Theatre
     @all_seats
   end
 
+  def seat_available?(row, seat)
+    rows[row].seats[seat].available?
+  end
+
   private
 
   def assert_valid_row_number(row)
@@ -27,6 +31,6 @@ class Theatre
   end
 
   def assert_valid_seat_number(seat)
-    raise InvalidSeatNumberError if seat.negative? || seat > 50
+    raise InvalidSeatNumberError if seat.negative? || seat > row(0).seats.count
   end
 end
