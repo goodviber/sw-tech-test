@@ -1,7 +1,6 @@
-require 'byebug'
+# frozen_string_literal: true
 
 class FileReader
-
   attr_reader :bookings_array
 
   def initialize
@@ -16,7 +15,7 @@ class FileReader
   end
 
   def hash_booking(booking)
-    keys = [:id, :start_row, :first_seat, :end_row, :last_seat]
+    keys = %i[id start_row first_seat end_row last_seat]
     [keys, booking].transpose.to_h
   end
 
@@ -25,7 +24,6 @@ class FileReader
   end
 
   def create_booking_requests
-    bookings_array.map! { |booking| booking = BookingRequest.new(booking) }
+    bookings_array.map! { |booking| BookingRequest.new(booking) }
   end
-
 end
