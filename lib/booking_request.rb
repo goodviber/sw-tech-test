@@ -33,11 +33,12 @@ class BookingRequest
   end
 
   def within_row?
-    first_seat >= 0 && last_seat <= 49
+    byebug
+    first_seat >= 0 && last_seat <= Row.new.number_of_seats - 1
   end
 
   def within_theatre?
-    start_row >= 0 && start_row <= 99
+    start_row >= 0 && start_row <= Theatre.new.rows.size - 1
   end
 
   def seats_in_order?
