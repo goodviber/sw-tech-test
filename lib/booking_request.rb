@@ -3,7 +3,7 @@
 class BookingRequest
   attr_accessor :id, :start_row, :first_seat, :end_row, :last_seat, :seats
 
-  MAX_SEATING_ALLOWANCE = 5.freeze
+  MAX_SEATING_ALLOWANCE = 5
 
   def initialize(params = {})
     @id = params.fetch :id
@@ -18,10 +18,10 @@ class BookingRequest
 
   def valid?
     row_match? &&
-    max_seat_allowance? &&
-    within_row? &&
-    within_theatre? &&
-    seats_in_order?
+      max_seat_allowance? &&
+      within_row? &&
+      within_theatre? &&
+      seats_in_order?
   end
 
   def row_match?
@@ -33,7 +33,6 @@ class BookingRequest
   end
 
   def within_row?
-    byebug
     first_seat >= 0 && last_seat <= Row.new.number_of_seats - 1
   end
 
