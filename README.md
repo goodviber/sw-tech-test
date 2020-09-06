@@ -10,13 +10,13 @@ Write a system to process a text file of bookings (booking_requests) and determi
 
 The text file of bookings contains one booking per line, where a booking is of the following form:
 
-(<id>,<index of first seat row>:<index of first seat within row>,<index of last seat row>:<index of last seat within row>),
+(id, index of first seat row:index of first seat within row, index of last seat row:index of last seat within row),
 
 Rows and seats are both 0-indexed. Note the trailing comma is absent on the final line.
 
-## Built in ruby 2.7.1
+### Built in ruby 2.7.1
 
-run `bundle install`, then run `bundle exec rspec` to receive test output. Uses `bookings/sample_booking_requests` file for FileReader, the path is set in booking_manager_spec.rb, at line 16.
+Clone and run `bundle install`, then run `bundle exec rspec` to receive test output. Uses `bookings/sample_booking_requests` file for FileReader, the path is set in booking_manager_spec.rb, at line 16.
 
 The rejections are:
 
