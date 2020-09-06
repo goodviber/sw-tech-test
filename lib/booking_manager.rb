@@ -17,14 +17,6 @@ class BookingManager
     @current_booking = booking_request.seats
   end
 
-  def last_row
-    @theatre.rows.size - 1
-  end
-
-  def last_seat
-    @theatre.rows[0].seats.size - 1
-  end
-
   def requested_seats_available?
     seats = theatre.seat(current_booking[:row], current_booking[:seat_range])
     seats_available?(seats)

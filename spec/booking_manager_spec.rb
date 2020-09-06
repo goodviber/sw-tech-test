@@ -43,17 +43,6 @@ RSpec.describe BookingManager do
     end
   end
 
-  describe '#last_row' do
-    it 'returns the number of the last row in the theatre' do
-      expect(subject.last_row).to eq(99)
-    end
-  end
-
-  describe '#last_seat' do
-    it 'returns the number of the last seat in the theatre row' do
-      expect(subject.last_seat).to eq(49)
-    end
-  end
 
   describe '#requested_seats_available?' do
     it 'checks the availablity of the requested seats' do
