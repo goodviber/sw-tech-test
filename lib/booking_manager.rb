@@ -24,7 +24,7 @@ class BookingManager
 
   def no_single_seat_gap?
     return false if first == 1 && theatre.seat(row, 0).available? ||
-                    last == 48 && theatre.seat(row, 49).available? ||
+                    last == 48 && theatre.seat(row, theatre.last_seat).available? ||
                     first > 1 && right_single_gap ||
                     last < 48 && left_single_gap
 

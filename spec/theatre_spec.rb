@@ -23,6 +23,12 @@ RSpec.describe Theatre do
     end
   end
 
+  describe '#last_seat' do
+    it 'returns the number of the last seat in the row' do
+      expect(subject.last_seat).to eq(Row.new.number_of_seats - 1)
+    end
+  end
+
   describe '#seat_available?' do
     let(:seat) { subject.seat(0, 0) }
     it 'returns the availability of a specific seat' do

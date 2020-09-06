@@ -17,10 +17,11 @@ class Theatre
     @all_seats
   end
 
+  def last_seat
+    row(0).number_of_seats - 1
+  end
+
   def seat_available?(row, seat)
     rows[row].seats[seat].available?
   end
-
-  private
-
 end
