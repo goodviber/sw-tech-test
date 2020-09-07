@@ -43,7 +43,6 @@ RSpec.describe BookingManager do
     end
   end
 
-
   describe '#requested_seats_available?' do
     let(:seat) { subject.theatre.seat(18, 5) }
     it 'checks the availablity of the requested seats' do
@@ -51,7 +50,6 @@ RSpec.describe BookingManager do
       expect(subject.requested_seats_available?).to be true
       seat.reserve
       expect(subject.requested_seats_available?).to be false
-
     end
   end
 
