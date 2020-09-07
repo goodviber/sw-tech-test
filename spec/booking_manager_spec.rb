@@ -45,9 +45,13 @@ RSpec.describe BookingManager do
 
 
   describe '#requested_seats_available?' do
+    let(:seat) { subject.theatre.seat(18, 5) }
     it 'checks the availablity of the requested seats' do
       subject.session_booking(valid_booking_request)
       expect(subject.requested_seats_available?).to be true
+      seat.reserve
+      expect(subject.requested_seats_available?).to be false
+
     end
   end
 
