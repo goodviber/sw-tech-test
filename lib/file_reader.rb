@@ -9,7 +9,7 @@ class FileReader
 
   def read_the_file(file_path)
     File.foreach(file_path) do |line|
-      line_array = line.gsub(/\D/, " ").split.map(&:to_i)
+      line_array = line.gsub(/\D/, ' ').split.map(&:to_i)
       bookings_array << line_array
     end
   end
